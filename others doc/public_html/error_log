@@ -1,0 +1,72 @@
+[13-Sep-2025 11:05:19 UTC] PHP Warning:  require(/home/vodbpxic/public_html/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:05:19 UTC] PHP Warning:  require(/home/vodbpxic/public_html/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:05:19 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/vodbpxic/public_html/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/vodbpxic/public_html/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:06:12 UTC] PHP Warning:  require(/home/vodbpxic/public_html/../be-studiodindin.id/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:06:12 UTC] PHP Warning:  require(/home/vodbpxic/public_html/../be-studiodindin.id/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:06:12 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/vodbpxic/public_html/../be-studiodindin.id/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/vodbpxic/public_html/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:06:12 UTC] PHP Warning:  require(/home/vodbpxic/public_html/../be-studiodindin.id/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:06:12 UTC] PHP Warning:  require(/home/vodbpxic/public_html/../be-studiodindin.id/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:06:12 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/vodbpxic/public_html/../be-studiodindin.id/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/vodbpxic/public_html/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:06:13 UTC] PHP Warning:  require(/home/vodbpxic/public_html/../be-studiodindin.id/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:06:13 UTC] PHP Warning:  require(/home/vodbpxic/public_html/../be-studiodindin.id/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:06:13 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/vodbpxic/public_html/../be-studiodindin.id/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/vodbpxic/public_html/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:06:14 UTC] PHP Warning:  require(/home/vodbpxic/public_html/../be-studiodindin.id/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:06:14 UTC] PHP Warning:  require(/home/vodbpxic/public_html/../be-studiodindin.id/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:06:14 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/vodbpxic/public_html/../be-studiodindin.id/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/vodbpxic/public_html/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:06:14 UTC] PHP Warning:  require(/home/vodbpxic/public_html/../be-studiodindin.id/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:06:14 UTC] PHP Warning:  require(/home/vodbpxic/public_html/../be-studiodindin.id/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:06:14 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/vodbpxic/public_html/../be-studiodindin.id/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/vodbpxic/public_html/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:06:14 UTC] PHP Warning:  require(/home/vodbpxic/public_html/../be-studiodindin.id/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:06:14 UTC] PHP Warning:  require(/home/vodbpxic/public_html/../be-studiodindin.id/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:06:14 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/vodbpxic/public_html/../be-studiodindin.id/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/vodbpxic/public_html/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:06:14 UTC] PHP Warning:  require(/home/vodbpxic/public_html/../be-studiodindin.id/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:06:14 UTC] PHP Warning:  require(/home/vodbpxic/public_html/../be-studiodindin.id/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:06:14 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/vodbpxic/public_html/../be-studiodindin.id/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/vodbpxic/public_html/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:06:15 UTC] PHP Warning:  require(/home/vodbpxic/public_html/../be-studiodindin.id/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:06:15 UTC] PHP Warning:  require(/home/vodbpxic/public_html/../be-studiodindin.id/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:06:15 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/vodbpxic/public_html/../be-studiodindin.id/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/vodbpxic/public_html/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:06:16 UTC] PHP Warning:  require(/home/vodbpxic/public_html/../be-studiodindin.id/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:06:16 UTC] PHP Warning:  require(/home/vodbpxic/public_html/../be-studiodindin.id/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:06:16 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/vodbpxic/public_html/../be-studiodindin.id/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/vodbpxic/public_html/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:07:07 UTC] PHP Warning:  require(/home/vodbpxic/public_html/be-studiodindin.id/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:07:07 UTC] PHP Warning:  require(/home/vodbpxic/public_html/be-studiodindin.id/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:07:07 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/vodbpxic/public_html/be-studiodindin.id/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/vodbpxic/public_html/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:07:07 UTC] PHP Warning:  require(/home/vodbpxic/public_html/be-studiodindin.id/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:07:07 UTC] PHP Warning:  require(/home/vodbpxic/public_html/be-studiodindin.id/vendor/autoload.php): Failed to open stream: No such file or directory in /home/vodbpxic/public_html/index.php on line 34
+[13-Sep-2025 11:07:07 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/vodbpxic/public_html/be-studiodindin.id/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/vodbpxic/public_html/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/vodbpxic/public_html/index.php on line 34

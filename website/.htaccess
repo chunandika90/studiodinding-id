@@ -1,0 +1,10 @@
+# Serve sitemap.php at the conventional /sitemap.xml URL that search engines expect.
+RewriteEngine On
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
+# Clean URLs — hide .dc.html/.php extensions and query strings from visitors.
+# The real files still work directly too (nothing breaks old shared links).
+RewriteRule ^about/?$ about.dc.html [L]
+RewriteRule ^journal/?$ blog.dc.html [L]
+RewriteRule ^journal/([^/]+)/?$ blog-post.php?slug=$1 [L,QSA]
+RewriteRule ^project/([^/]+)/?$ project.php?slug=$1 [L,QSA]

@@ -1,0 +1,21 @@
+node_modules/
+vendor/
+dist/
+build/
+.next/
+
+.env
+.env.*
+!.env.example
+
+# Kredensial PHP asli (shared/config.php bootstrap-nya baca dari sini) — JANGAN PERNAH commit.
+/shared/config.local.php
+
+# Script one-time/debug yang hardcode password asli — bukan bagian app permanen
+# (setup.php sendiri emang dimaksudkan dihapus dari server setelah dipakai sekali, per DEPLOY.md).
+/cms/api/setup.php
+/others doc/backoffice.studiodinding.id/testdb.php
+/others doc/backoffice.studiodinding.id/mssql-dbnew.php
+
+.DS_Store
+*.log

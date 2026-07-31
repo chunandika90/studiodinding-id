@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    @keyframes kenburns {
+      0% { transform: scale(1) translate(0,0); }
+      100% { transform: scale(1.12) translate(-1.5%, -1%); }
+    }
+    @keyframes fadeDown {
+      0% { opacity: 0; transform: translateY(-14px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(28px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    [data-reveal-id] { animation: fadeInUp 1s cubic-bezier(.2,.8,.2,1) both; }
+    [data-reveal-id].in-view { animation-play-state: running; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #0a0a09; }
+    ::selection { background: #b89159; color: #0a0a09; }
+  </style>
+</helmet>
+<div ref="{{ rootRef }}" style="background:#0a0a09; color:oklch(0.95 0.01 85); font-family:'Inter',sans-serif; overflow-x:hidden;">
+
+  <!-- NAV -->
+  <nav style="position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:28px 5vw; background:linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0)); animation:fadeDown 1s ease both;">
+    <img src="assets/img/sd-logo-white.png" alt="Studio Dinding" style="height:56px; width:auto; display:block;">
+    <div style="display:flex; gap:40px; align-items:center;">
+      <a href="#projects" style="color:oklch(0.9 0.01 85); text-decoration:none; font-size:13px; letter-spacing:2px; font-weight:400;" style-hover="color:#c9a15c;">PORTFOLIO</a>
+      <a href="About.dc.html" style="color:oklch(0.9 0.01 85); text-decoration:none; font-size:13px; letter-spacing:2px; font-weight:400;" style-hover="color:#c9a15c;">ABOUT</a>
+      <a href="#contact" style="color:oklch(0.9 0.01 85); text-decoration:none; font-size:13px; letter-spacing:2px; font-weight:400; border:1px solid oklch(0.6 0.05 75); padding:10px 22px;" style-hover="color:#0a0a09; background:#c9a15c; border-color:#c9a15c;">CONTACT</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section onMouseMove="{{ onHeroMove }}" onMouseLeave="{{ onHeroLeave }}" style="position:relative; height:100vh; min-height:820px; display:flex; align-items:flex-end; overflow:hidden;">
+    <div style="{{ heroParallaxStyle }}position:absolute; inset:-4%;">
+      <sc-for list="{{ slides }}" as="slide" hint-placeholder-count="5">
+        <div style="{{ slide.layerStyle }}position:absolute; inset:0;">
+          <div style="position:absolute; inset:0; background-image:url('{{ slide.img }}'); background-size:cover; background-position:center; animation:kenburns 9s ease-in-out infinite alternate;"></div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(10,10,9,0.92) 0%, rgba(10,10,9,0.25) 55%, rgba(10,10,9,0.35) 100%); pointer-events:none;"></div>
+    <div style="position:relative; padding:0 5vw 100px; max-width:900px; width:100%;">
+      <div data-reveal-id="hero" style="{{ heroStyle }}">
+        <div style="font-size:13px; letter-spacing:4px; color:#c9a15c; margin-bottom:22px;">ARCHITECTURE &amp; INTERIOR DESIGN — JAKARTA</div>
+        <div style="position:relative; min-height:clamp(170px,27vw,380px);">
+          <sc-for list="{{ slides }}" as="slide" hint-placeholder-count="5">
+            <h1 style="{{ slide.textStyle }}position:absolute; left:0; top:0; right:0; font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(40px,6.5vw,84px); line-height:1.05; margin:0;">{{ slide.titleA }}<br>{{ slide.titleB }}</h1>
+          </sc-for>
+        </div>
+        <div style="position:relative; min-height:clamp(80px,10vw,150px); margin-top:26px;">
+          <sc-for list="{{ slides }}" as="slide" hint-placeholder-count="5">
+            <p style="{{ slide.textStyle }}position:absolute; left:0; top:0; right:0; font-size:19px; line-height:1.7; color:oklch(0.85 0.01 85); max-width:520px; margin:0; font-weight:300;">{{ slide.sub }}</p>
+          </sc-for>
+        </div>
+        <div style="margin-top:40px; display:flex; align-items:center; gap:28px;">
+          <a href="#contact" style="display:inline-block; color:#0a0a09; background:#c9a15c; text-decoration:none; padding:17px 38px; font-size:13px; letter-spacing:2px; font-weight:500;" style-hover="background:oklch(0.95 0.01 85);">START A PROJECT</a>
+          <div style="display:flex; gap:9px;">
+            <sc-for list="{{ slides }}" as="slide" hint-placeholder-count="5">
+              <div onClick="{{ slide.onDot }}" style="{{ slide.dotStyle }}width:9px; height:9px; border-radius:50%; cursor:pointer; transition:background 0.4s ease, transform 0.4s ease;"></div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATEMENT -->
+  <section style="padding:180px 5vw; text-align:center; max-width:1100px; margin:0 auto;">
+    <p data-reveal-id="statement" style="{{ statementStyle }}font-family:'Playfair Display',serif; font-style:italic; font-weight:400; font-size:clamp(26px,3.4vw,42px); line-height:1.5; color:oklch(0.93 0.01 85);">
+      "We don't just design space — we shape experiences. Every room is planned around how you actually live, down to the last detail."
+    </p>
+    <div style="{{ statementStyle }}margin-top:36px; font-size:13px; letter-spacing:2px; color:oklch(0.6 0.02 85);">RYAN DHARMANSYAH — PRINCIPAL &amp; CHIEF ARCHITECT</div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" style="padding:60px 5vw 160px;">
+    <div data-reveal-id="projectsHead" style="{{ projectsHeadStyle }}display:flex; justify-content:space-between; align-items:baseline; margin-bottom:44px; flex-wrap:wrap; gap:20px;">
+      <h2 style="font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(30px,4vw,52px); margin:0;">Selected work</h2>
+    </div>
+    <div style="display:flex; gap:12px; margin-bottom:60px; flex-wrap:wrap;">
+      <sc-for list="{{ filters }}" as="f" hint-placeholder-count="3">
+        <div onClick="{{ f.onClick }}" style="{{ f.style }}padding:9px 22px; font-size:12px; letter-spacing:2px; font-weight:500; cursor:pointer; transition:all 0.3s ease;">{{ f.label }}</div>
+      </sc-for>
+    </div>
+    <div data-reveal-id="projectsGrid" style="{{ projectsGridStyle }}{{ projectsGridAnimStyle }}display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:6px; perspective:1400px;">
+      <sc-for list="{{ projects }}" as="p" hint-placeholder-count="6">
+        <a href="{{ p.href }}" onMouseMove="{{ p.onMove }}" onMouseLeave="{{ p.onLeave }}" style="{{ p.cardEnterStyle }}{{ p.tiltStyle }}position:relative; display:block; aspect-ratio:4/5; overflow:hidden; text-decoration:none; color:inherit; transform-style:preserve-3d;">
+          <img src="{{ p.img }}" alt="{{ p.name }}" style="width:100%; height:100%; object-fit:cover; transition:transform 0.6s cubic-bezier(.2,.8,.2,1); display:block; transform:scale(1.02);" style-hover="transform:scale(1.12);">
+          <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(10,10,9,0.85) 0%, rgba(10,10,9,0) 45%);"></div>
+          <div style="position:absolute; left:26px; bottom:22px; right:26px;">
+            <div style="font-size:11px; letter-spacing:2px; color:#c9a15c; margin-bottom:6px;">{{ p.typeLabel }}</div>
+            <div style="font-family:'Playfair Display',serif; font-size:22px;">{{ p.name }}</div>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="padding:180px 5vw 120px; position:relative; overflow:hidden;">
+    <div style="position:absolute; inset:0; background-image:url('assets/img/home-04.jpg'); background-size:cover; background-position:center 30%; opacity:0.28;"></div>
+    <div style="position:absolute; inset:0; background:linear-gradient(to bottom, #0a0a09 0%, rgba(10,10,9,0.75) 40%, #0a0a09 100%);"></div>
+    <div data-reveal-id="contact" style="{{ contactStyle }}position:relative; max-width:760px; margin:0 auto; text-align:center;">
+      <h2 style="font-family:'Playfair Display',serif; font-weight:400; font-size:clamp(32px,5vw,58px); margin:0 0 24px; line-height:1.15;">Let's build something timeless.</h2>
+      <p style="color:oklch(0.75 0.02 85); font-size:16px; line-height:1.7; margin:0 0 48px; font-weight:300;">Tell us about your space — we'll get back to you within one business day.</p>
+      <div style="display:flex; justify-content:center; gap:18px; flex-wrap:wrap; margin-bottom:70px;">
+        <a href="https://wa.me/6281289795996?text=Hello%20Studio%20Dinding%2C%20saya%20tertarik%20dengan%20layanan%20Anda" target="_blank" style="display:inline-block; color:#0a0a09; background:#c9a15c; text-decoration:none; padding:18px 40px; font-size:13px; letter-spacing:2px; font-weight:500;" style-hover="background:oklch(0.95 0.01 85);">WHATSAPP US</a>
+        <a href="/cdn-cgi/l/email-protection#9eedeaebfaf7f1faf7f0faf7f0f9def9f3fff7f2b0fdf1f3" style="display:inline-block; color:oklch(0.9 0.01 85); background:transparent; border:1px solid rgba(255,255,255,0.3); text-decoration:none; padding:18px 40px; font-size:13px; letter-spacing:2px; font-weight:500;" style-hover="border-color:#c9a15c; color:#c9a15c;">EMAIL US</a>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:32px; text-align:left; border-top:1px solid rgba(255,255,255,0.12); padding-top:44px;">
+        <div>
+          <div style="font-size:11px; letter-spacing:2px; color:#c9a15c; margin-bottom:10px;">STUDIO</div>
+          <div style="font-size:14px; line-height:1.7; color:oklch(0.75 0.02 85); font-weight:300;">Jl. Tanjung Duren Barat IV No.22A<br>Jakarta Barat 11470</div>
+        </div>
+        <div>
+          <div style="font-size:11px; letter-spacing:2px; color:#c9a15c; margin-bottom:10px;">CALL / WA</div>
+          <div style="font-size:14px; line-height:1.7; color:oklch(0.75 0.02 85); font-weight:300;">+62 812-8979-5996</div>
+        </div>
+        <div>
+          <div style="font-size:11px; letter-spacing:2px; color:#c9a15c; margin-bottom:10px;">EMAIL</div>
+          <div style="font-size:14px; line-height:1.7; color:oklch(0.75 0.02 85); font-weight:300;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e4979091808d8b808d8a808d8a83a48389858d88ca878b89">[email&#160;protected]</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="padding:34px 5vw; display:flex; justify-content:space-between; align-items:center; border-top:1px solid rgba(255,255,255,0.1); flex-wrap:wrap; gap:16px;">
+    <div style="font-size:12px; color:oklch(0.55 0.02 85);">© 2026 Studio Dinding. All rights reserved.</div>
+    <a href="https://www.instagram.com/studio.dinding" target="_blank" style="color:oklch(0.75 0.02 85); text-decoration:none; font-size:12px; letter-spacing:1.5px;" style-hover="color:#c9a15c;">INSTAGRAM ↗</a>
+  </footer>
+
+
+  <!-- FLOATING QUICK CONTACT -->
+  <div style="position:fixed; right:28px; bottom:28px; z-index:200; display:flex; flex-direction:column; align-items:center; gap:14px;">
+    <a href="https://www.instagram.com/studio.dinding" target="_blank" title="Instagram" style="display:flex; align-items:center; justify-content:center; width:46px; height:46px; border-radius:50%; border:1px solid rgba(242,236,225,0.35); background:rgba(10,10,9,0.55); backdrop-filter:blur(6px); transition:border-color 0.3s ease, transform 0.3s ease;" style-hover="border-color:#c9a15c; transform:translateY(-2px);">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f2ece1" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.2" cy="6.8" r="0.9" fill="#f2ece1" stroke="none"></circle></svg>
+    </a>
+    <a href="https://wa.me/6281289795996?text=Hello%20Studio%20Dinding%2C%20saya%20tertarik%20dengan%20layanan%20Anda" target="_blank" title="WhatsApp" style="display:flex; align-items:center; justify-content:center; width:58px; height:58px; border-radius:50%; background:#c9a15c; box-shadow:0 8px 24px rgba(0,0,0,0.4); transition:background 0.3s ease, transform 0.3s ease;" style-hover="background:#f2ece1; transform:translateY(-2px);">
+      <svg width="24" height="24" viewBox="0 0 32 32" fill="#0a0a09"><path d="M16.02 4C9.4 4 4 9.4 4 16.02c0 2.12.56 4.14 1.6 5.94L4 28l6.2-1.56a11.94 11.94 0 0 0 5.82 1.5h.01c6.63 0 12.02-5.4 12.02-12.02C28.05 9.4 22.65 4 16.02 4zm0 21.86h-.01a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-3.68.93.98-3.58-.24-.37a9.85 9.85 0 0 1-1.51-5.23c0-5.46 4.45-9.9 9.92-9.9 2.65 0 5.13 1.03 7 2.9a9.83 9.83 0 0 1 2.9 7c0 5.47-4.45 9.84-9.95 9.84zm5.44-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.24-.46-2.37-1.47-.87-.78-1.46-1.74-1.63-2.04-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"></path></svg>
+    </a>
+  </div>
+
+</div>
+
+</x-dc>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  projects0 = [
+    { key: 'ry', name: 'RY House', type: 'residential', img: 'assets/img/ry-house-01.jpeg', href: 'Project - RY House.dc.html' },
+    { key: 'da', name: 'DA House', type: 'residential', img: 'assets/img/da-house-01.jpg', href: 'Project - DA House.dc.html' },
+    { key: 'wo', name: 'WO Residence', type: 'residential', img: 'assets/img/wo-residence-01.jpg', href: 'Project - WO Residence.dc.html' },
+    { key: 'ws', name: 'WS Residence', type: 'residential', img: 'assets/img/ws-residence-01.jpg', href: 'Project - WS Residence.dc.html' },
+    { key: 'bh', name: 'Beauty Haul', type: 'commercial', img: 'assets/img/beauty-haul-01.jpg', href: 'Project - Beauty Haul.dc.html' },
+    { key: 'vb', name: 'Villa Bag', type: 'residential', img: 'assets/img/villa-bag-01.jpg', href: 'Project - Villa Bag.dc.html' },
+    { key: 'co', name: 'CO House', type: 'residential', img: 'assets/img/WO-HOUSE-01.jpg', href: 'Project - CO House.dc.html' },
+    { key: 'kh', name: 'K House', type: 'residential', img: 'assets/img/K-HOUSE-01.jpg', href: 'Project - K House.dc.html' },
+    { key: 'hm', name: 'Hotel Milenium', type: 'commercial', img: 'assets/img/hotel-milenium-01.jpg', href: 'Project - Hotel Milenium.dc.html' },
+    { key: 'bsd', name: 'BSD Anggrek Loka', type: 'residential', img: 'assets/img/bsd-anggrek-loka-01.jpg', href: 'Project - BSD Anggrek Loka.dc.html' },
+    { key: 'bs', name: 'BS Residence', type: 'residential', img: 'assets/img/bs-residence-01.jpg', href: 'Project - BS Residence.dc.html' },
+    { key: 'cr', name: 'CR Residence', type: 'residential', img: 'assets/img/cr-residence-01.jpg', href: 'Project - CR Residence.dc.html' },
+  ];
+
+  filters = [
+    { key: 'all', label: 'ALL' },
+    { key: 'residential', label: 'RESIDENTIAL' },
+    { key: 'commercial', label: 'COMMERCIAL' },
+  ];
+
+  slides0 = [
+    { key: 0, img: 'assets/img/home-01.jpg', titleA: 'Every great design', titleB: 'begins here.', sub: 'Timeless design, tailored to your lifestyle and vision.' },
+    { key: 1, img: 'assets/img/home-02.jpg', titleA: 'Quality over quantity,', titleB: 'seamless execution.', sub: 'Full service from first concept to site supervision.' },
+    { key: 2, img: 'assets/img/home-03.jpg', titleA: 'Innovative architecture.', titleB: 'Timeless interiors.', sub: 'Architecture and interiors that balance form, function and feeling.' },
+    { key: 3, img: 'assets/img/home-04.jpg', titleA: "We don't just design space —", titleB: 'we shape experiences.', sub: 'From architecture to thoughtful interiors, we create environments that inspire.' },
+    { key: 4, img: 'assets/img/home-05.jpg', titleA: 'Every space', titleB: 'tells a story.', sub: "Let's craft yours — architecture and interiors that reflect your identity." },
+  ];
+
+  state = { heroX: 0, heroY: 0, tilt: {}, slide: 0, filter: 'all', filterAnim: 'in' };
+
+  setFilter(f) {
+    if (f === this.state.filter || this.state.filterAnim === 'out') return;
+    this.setState({ filterAnim: 'out' });
+    clearTimeout(this._filterTimer);
+    this._filterTimer = setTimeout(() => {
+      this.setState({ filter: f, filterAnim: 'in' });
+    }, 260);
+  }
+
+  componentDidMount() {
+    this.slideTimer = setInterval(() => {
+      this.setState((s) => ({ slide: (s.slide + 1) % this.slides0.length }));
+    }, 6000);
+  }
+
+  componentWillUnmount() {
+    if (this.slideTimer) clearInterval(this.slideTimer);
+    clearTimeout(this._filterTimer);
+  }
+
+  goToSlide(i) {
+    this.setState({ slide: i });
+  }
+
+  reveal(delayMs) {
+    return `animation-delay:${delayMs}ms;`;
+  }
+
+  onHeroMove(e) {
+    const r = e.currentTarget.getBoundingClientRect();
+    const nx = (e.clientX - r.left) / r.width - 0.5;
+    const ny = (e.clientY - r.top) / r.height - 0.5;
+    this.setState({ heroX: nx * 26, heroY: ny * 26 });
+  }
+
+  onHeroLeave() {
+    this.setState({ heroX: 0, heroY: 0 });
+  }
+
+  onCardMove(key, e) {
+    const r = e.currentTarget.getBoundingClientRect();
+    const nx = (e.clientX - r.left) / r.width - 0.5;
+    const ny = (e.clientY - r.top) / r.height - 0.5;
+    this.setState((s) => ({ tilt: { ...s.tilt, [key]: { rx: ny * -10, ry: nx * 12 } } }));
+  }
+
+  onCardLeave(key) {
+    this.setState((s) => ({ tilt: { ...s.tilt, [key]: { rx: 0, ry: 0 } } }));
+  }
+
+  renderVals() {
+    const t = this.state.tilt;
+    return {
+      rootRef: (el) => { this.rootNode = el; },
+      heroStyle: this.reveal(200),
+      heroParallaxStyle: `transform:translate(${this.state.heroX}px,${this.state.heroY}px); transition:transform 0.5s cubic-bezier(.2,.8,.2,1);`,
+      onHeroMove: (e) => this.onHeroMove(e),
+      onHeroLeave: () => this.onHeroLeave(),
+      slides: this.slides0.map((s) => ({
+        ...s,
+        layerStyle: `opacity:${this.state.slide === s.key ? 1 : 0}; transition:opacity 1.4s ease;`,
+        textStyle: `opacity:${this.state.slide === s.key ? 1 : 0}; transition:opacity 0.9s ease; pointer-events:${this.state.slide === s.key ? 'auto' : 'none'};`,
+        dotStyle: `background:${this.state.slide === s.key ? '#c9a15c' : 'rgba(255,255,255,0.35)'}; transform:scale(${this.state.slide === s.key ? 1.3 : 1});`,
+        onDot: () => this.goToSlide(s.key),
+      })),
+      statementStyle: this.reveal(0),
+      projectsHeadStyle: this.reveal(0),
+      projectsGridStyle: this.reveal(0),
+      contactStyle: this.reveal(0),
+      filters: this.filters.map((f) => ({
+        ...f,
+        style: `color:${this.state.filter === f.key ? '#0a0a09' : 'oklch(0.85 0.01 85)'}; background:${this.state.filter === f.key ? '#c9a15c' : 'transparent'}; border:1px solid ${this.state.filter === f.key ? '#c9a15c' : 'rgba(255,255,255,0.25)'};`,
+        onClick: () => this.setFilter(f.key),
+      })),
+      projectsGridAnimStyle: this.state.filterAnim === 'out'
+        ? 'opacity:0; transform:scale(0.97) translateY(6px); transition:opacity 0.26s ease, transform 0.26s ease;'
+        : 'opacity:1; transform:scale(1) translateY(0); transition:opacity 0.4s ease, transform 0.4s ease;',
+      projects: this.projects0
+        .filter((p) => this.state.filter === 'all' || p.type === this.state.filter)
+        .map((p, i) => {
+          const tt = t[p.key] || { rx: 0, ry: 0 };
+          return {
+            ...p,
+            typeLabel: p.type.toUpperCase(),
+            cardEnterStyle: this.state.filterAnim === 'in' ? `animation:fadeInUp 0.55s cubic-bezier(.2,.8,.2,1) both; animation-delay:${i * 55}ms;` : '',
+            tiltStyle: `transform:perspective(1000px) rotateX(${tt.rx}deg) rotateY(${tt.ry}deg) scale(${(tt.rx || tt.ry) ? 1.02 : 1}); transition:transform 0.35s cubic-bezier(.2,.8,.2,1);`,
+            onMove: (e) => this.onCardMove(p.key, e),
+            onLeave: () => this.onCardLeave(p.key),
+          };
+        }),
+    };
+  }
+}
+
+</script>
+</body>
+</html>

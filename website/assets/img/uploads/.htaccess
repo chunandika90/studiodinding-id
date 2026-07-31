@@ -1,0 +1,5 @@
+# Uploaded files are user-supplied images — never execute anything here as a script,
+# even though upload.php already validates file type via getimagesize().
+<FilesMatch "\.(php|php\d|phtml|pl|py|cgi|sh)$">
+  Require all denied
+</FilesMatch>

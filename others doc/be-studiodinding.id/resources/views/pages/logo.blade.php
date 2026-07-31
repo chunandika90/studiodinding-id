@@ -1,0 +1,1 @@
+<div style="border: 0px solid #f0f;"><img id="logoMain" src="{{ asset('assets/img/sd-logo-1.png') }}?v={{ date('ymdhis') }}" alt="studio dinding logo"></div>

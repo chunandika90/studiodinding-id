@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --type-title: 64px;
+      --type-subtitle: 40px;
+      --type-body: 28px;
+      --type-small: 22px;
+      --pad-x: 100px;
+      --pad-top: 100px;
+      --pad-bottom: 80px;
+    }
+    body { margin: 0; background: #0a0a09; }
+  </style>
+</helmet>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
+
+  <!-- SLIDE 1: COVER -->
+  <section data-label="Cover" data-speaker-notes="Intro the studio and what this deck covers." style="background:#0a0a09; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; padding:0 var(--pad-x); font-family:'Inter',sans-serif; color:#f2ece1;">
+    <img src="assets/img/sd-logo-white.png" alt="Studio Dinding" style="height:96px; width:auto; margin-bottom:56px;">
+    <div style="font-size:24px; letter-spacing:5px; color:#c9a15c; margin-bottom:28px;">ARCHITECTURE &amp; INTERIOR DESIGN — JAKARTA</div>
+    <div style="font-family:'Playfair Display',serif; font-weight:400; font-size:88px; line-height:1.08; max-width:1400px;">Website Redesign<br>Presentation</div>
+    <div style="margin-top:52px; font-size:24px; color:oklch(0.6 0.02 85); letter-spacing:1px;">Prepared for Studio Dinding — 2026</div>
+  </section>
+
+  <!-- SLIDE 2: OVERVIEW -->
+  <section data-label="Overview" data-speaker-notes="Walk through the new site structure: homepage, portfolio, project pages, about." style="background:#0a0a09; display:flex; flex-direction:column; justify-content:center; padding:var(--pad-top) var(--pad-x) var(--pad-bottom); font-family:'Inter',sans-serif; color:#f2ece1;">
+    <div style="font-size:24px; letter-spacing:4px; color:#c9a15c; margin-bottom:24px;">WHAT'S NEW</div>
+    <div style="font-family:'Playfair Display',serif; font-weight:400; font-size:60px; margin-bottom:80px;">A new site, built for a premium studio.</div>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:48px;">
+      <div>
+        <div style="font-family:'Playfair Display',serif; font-size:40px; color:#c9a15c; margin-bottom:20px;">01</div>
+        <div style="font-size:28px; font-family:'Playfair Display',serif; margin-bottom:14px;">Homepage</div>
+        <div style="font-size:26px; line-height:1.6; color:oklch(0.65 0.02 85); font-weight:300;">Rotating hero, studio statement, filterable portfolio grid.</div>
+      </div>
+      <div>
+        <div style="font-family:'Playfair Display',serif; font-size:40px; color:#c9a15c; margin-bottom:20px;">02</div>
+        <div style="font-size:28px; font-family:'Playfair Display',serif; margin-bottom:14px;">Portfolio</div>
+        <div style="font-size:26px; line-height:1.6; color:oklch(0.65 0.02 85); font-weight:300;">12 projects, filterable by Residential and Commercial.</div>
+      </div>
+      <div>
+        <div style="font-family:'Playfair Display',serif; font-size:40px; color:#c9a15c; margin-bottom:20px;">03</div>
+        <div style="font-size:28px; font-family:'Playfair Display',serif; margin-bottom:14px;">Project Pages</div>
+        <div style="font-size:26px; line-height:1.6; color:oklch(0.65 0.02 85); font-weight:300;">Dedicated story and gallery for every project.</div>
+      </div>
+      <div>
+        <div style="font-family:'Playfair Display',serif; font-size:40px; color:#c9a15c; margin-bottom:20px;">04</div>
+        <div style="font-size:28px; font-family:'Playfair Display',serif; margin-bottom:14px;">About</div>
+        <div style="font-size:26px; line-height:1.6; color:oklch(0.65 0.02 85); font-weight:300;">Meet the team behind the studio's work.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 3: HOMEPAGE FULL -->
+  <section data-label="Homepage" data-speaker-notes="Show the homepage hero — rotating tagline slider with parallax." style="background:#0a0a09; position:relative;">
+    <img src="screenshots/01-home.png" alt="Homepage hero" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+    <div style="position:absolute; left:100px; bottom:80px; color:#f2ece1; font-family:'Inter',sans-serif;">
+      <div style="font-size:22px; letter-spacing:4px; color:#c9a15c; margin-bottom:14px;">HOMEPAGE</div>
+      <div style="font-family:'Playfair Display',serif; font-size:44px;">Rotating hero with cinematic parallax</div>
+    </div>
+  </section>
+
+  <!-- SLIDE 4: PORTFOLIO GRID -->
+  <section data-label="Portfolio Grid" data-speaker-notes="Selected work grid, filterable by category." style="background:#0a0a09; position:relative;">
+    <img src="screenshots/02-home.png" alt="Portfolio grid" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+    <div style="position:absolute; left:100px; bottom:80px; color:#f2ece1; font-family:'Inter',sans-serif;">
+      <div style="font-size:22px; letter-spacing:4px; color:#c9a15c; margin-bottom:14px;">PORTFOLIO</div>
+      <div style="font-family:'Playfair Display',serif; font-size:44px;">Filterable by Residential &amp; Commercial</div>
+    </div>
+  </section>
+
+  <!-- SLIDE 5: PROJECT PAGE - WS RESIDENCE -->
+  <section data-label="Project — WS Residence" data-speaker-notes="Example project detail page, WS Residence." style="background:#0a0a09; position:relative;">
+    <img src="screenshots/ws-residence.png" alt="WS Residence project page" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+    <div style="position:absolute; left:100px; bottom:80px; color:#f2ece1; font-family:'Inter',sans-serif;">
+      <div style="font-size:22px; letter-spacing:4px; color:#c9a15c; margin-bottom:14px;">PROJECT PAGE</div>
+      <div style="font-family:'Playfair Display',serif; font-size:44px;">Every project gets its own story</div>
+    </div>
+  </section>
+
+  <!-- SLIDE 6: PROJECT PAGE - HOTEL MILENIUM -->
+  <section data-label="Project — Hotel Milenium" data-speaker-notes="Commercial example, Hotel Milenium." style="background:#0a0a09; position:relative;">
+    <img src="screenshots/hotel-milenium.png" alt="Hotel Milenium project page" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+    <div style="position:absolute; left:100px; bottom:80px; color:#f2ece1; font-family:'Inter',sans-serif;">
+      <div style="font-size:22px; letter-spacing:4px; color:#c9a15c; margin-bottom:14px;">COMMERCIAL WORK</div>
+      <div style="font-family:'Playfair Display',serif; font-size:44px;">Hotel Milenium</div>
+    </div>
+  </section>
+
+  <!-- SLIDE 7: PROJECT PAGE - BS RESIDENCE -->
+  <section data-label="Project — BS Residence" data-speaker-notes="Residential renovation example, BS Residence." style="background:#0a0a09; position:relative;">
+    <img src="screenshots/bs-residence.png" alt="BS Residence project page" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+    <div style="position:absolute; left:100px; bottom:80px; color:#f2ece1; font-family:'Inter',sans-serif;">
+      <div style="font-size:22px; letter-spacing:4px; color:#c9a15c; margin-bottom:14px;">RESIDENTIAL WORK</div>
+      <div style="font-family:'Playfair Display',serif; font-size:44px;">BS Residence</div>
+    </div>
+  </section>
+
+  <!-- SLIDE 8: ABOUT HERO -->
+  <section data-label="About" data-speaker-notes="About page hero introducing the studio's team." style="background:#0a0a09; position:relative;">
+    <img src="screenshots/01-about.png" alt="About page hero" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+    <div style="position:absolute; left:100px; bottom:80px; color:#f2ece1; font-family:'Inter',sans-serif;">
+      <div style="font-size:22px; letter-spacing:4px; color:#c9a15c; margin-bottom:14px;">ABOUT</div>
+      <div style="font-family:'Playfair Display',serif; font-size:44px;">The people behind every space</div>
+    </div>
+  </section>
+
+  <!-- SLIDE 9: ABOUT TEAM -->
+  <section data-label="About — Team" data-speaker-notes="Team member profile layout example." style="background:#0a0a09; position:relative;">
+    <img src="screenshots/02-about.png" alt="About team section" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+  </section>
+
+  <!-- SLIDE 10: PROJECT LIST -->
+  <section data-label="All Projects" data-speaker-notes="Full list of 12 projects now on the site." style="background:#0a0a09; display:flex; flex-direction:column; justify-content:center; padding:var(--pad-top) var(--pad-x) var(--pad-bottom); font-family:'Inter',sans-serif; color:#f2ece1;">
+    <div style="font-size:22px; letter-spacing:4px; color:#c9a15c; margin-bottom:24px;">FULL PORTFOLIO</div>
+    <div style="font-family:'Playfair Display',serif; font-weight:400; font-size:60px; margin-bottom:70px;">12 projects, ready to showcase</div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px 60px; font-size:26px; font-family:'Playfair Display',serif;">
+      <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:18px;">RY House <span style="font-size:16px; font-family:'Inter',sans-serif; color:#c9a15c; letter-spacing:2px; display:block; margin-top:6px;">RESIDENTIAL</span></div>
+      <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:18px;">DA House <span style="font-size:16px; font-family:'Inter',sans-serif; color:#c9a15c; letter-spacing:2px; display:block; margin-top:6px;">RESIDENTIAL</span></div>
+      <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:18px;">WO Residence <span style="font-size:16px; font-family:'Inter',sans-serif; color:#c9a15c; letter-spacing:2px; display:block; margin-top:6px;">RESIDENTIAL</span></div>
+      <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:18px;">WS Residence <span style="font-size:16px; font-family:'Inter',sans-serif; color:#c9a15c; letter-spacing:2px; display:block; margin-top:6px;">RESIDENTIAL</span></div>
+      <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:18px;">Beauty Haul <span style="font-size:16px; font-family:'Inter',sans-serif; color:#c9a15c; letter-spacing:2px; display:block; margin-top:6px;">COMMERCIAL</span></div>
+      <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:18px;">Villa Bag <span style="font-size:16px; font-family:'Inter',sans-serif; color:#c9a15c; letter-spacing:2px; display:block; margin-top:6px;">RESIDENTIAL</span></div>
+      <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:18px;">CO House <span style="font-size:16px; font-family:'Inter',sans-serif; color:#c9a15c; letter-spacing:2px; display:block; margin-top:6px;">RESIDENTIAL</span></div>
+      <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:18px;">K House <span style="font-size:16px; font-family:'Inter',sans-serif; color:#c9a15c; letter-spacing:2px; display:block; margin-top:6px;">RESIDENTIAL</span></div>
+      <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:18px;">Hotel Milenium <span style="font-size:16px; font-family:'Inter',sans-serif; color:#c9a15c; letter-spacing:2px; display:block; margin-top:6px;">COMMERCIAL</span></div>
+      <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:18px;">BSD Anggrek Loka <span style="font-size:16px; font-family:'Inter',sans-serif; color:#c9a15c; letter-spacing:2px; display:block; margin-top:6px;">RESIDENTIAL</span></div>
+      <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:18px;">BS Residence <span style="font-size:16px; font-family:'Inter',sans-serif; color:#c9a15c; letter-spacing:2px; display:block; margin-top:6px;">RESIDENTIAL</span></div>
+      <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:18px;">CR Residence <span style="font-size:16px; font-family:'Inter',sans-serif; color:#c9a15c; letter-spacing:2px; display:block; margin-top:6px;">RESIDENTIAL</span></div>
+    </div>
+  </section>
+
+  <!-- SLIDE 11: CLOSING -->
+  <section data-label="Closing" data-speaker-notes="Close with contact details and next steps." style="background:#0a0a09; position:relative;">
+    <img src="screenshots/03-home.png" alt="Contact section" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.5;">
+    <div style="position:absolute; inset:0; background:linear-gradient(to bottom, rgba(10,10,9,0.5) 0%, rgba(10,10,9,0.85) 100%);"></div>
+    <div style="position:relative; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; font-family:'Inter',sans-serif; color:#f2ece1;">
+      <div style="font-family:'Playfair Display',serif; font-weight:400; font-size:64px; margin-bottom:32px;">Ready for review.</div>
+      <div style="font-size:26px; color:oklch(0.75 0.02 85); font-weight:300; max-width:900px; line-height:1.6;">All pages are live and ready to walk through together — let us know what you'd like adjusted.</div>
+    </div>
+  </section>
+
+</x-import>
+
+</x-dc>
+</body>
+</html>

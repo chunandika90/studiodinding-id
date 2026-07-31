@@ -1,0 +1,4 @@
+# User-uploaded attachments — never execute anything here as a script.
+<FilesMatch "\.(php|php\d|phtml|pl|py|cgi|sh)$">
+  Require all denied
+</FilesMatch>
