@@ -1,0 +1,44 @@
+name: Playwright E2E
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: 'URL aplikasi yang dites (contoh: https://staging.contoh.com)'
+        required: true
+        type: string
+      start_path:
+        description: 'Path awal yang dibuka'
+        required: false
+        default: '/'
+        type: string
+
+jobs:
+  e2e:
+    name: Playwright
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: e2e
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: e2e/package-lock.json
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Jalankan tes
+        env:
+          BASE_URL: ${{ inputs.base_url }}
+          START_PATH: ${{ inputs.start_path }}
+        run: npx playwright test
+      - name: Simpan laporan
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: e2e/playwright-report
+          retention-days: 14
